@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.box-content{
+    height: 100vh;
+    width: 100%;
+    margin: 30px 50px;
+}
+.box-content > h1 span{
+    color: #114A8D;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 57.6px;
+    letter-spacing: -0.03em;
+}
+.box-content > h1{
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 57.6px;
+    letter-spacing: -0.03em;
+}
+.upper-two, .lower-two{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.upper-two{
+    margin-bottom: 40px;
+}
+.card-1, .card-2 , .card-3 , .card-4{
+    width: 511px;
+    height: 330px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.card-1 img, .card-2 img , .card-3 img , .card-4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+.content{
+    position: absolute;
+    bottom: 0px;
+    background: linear-gradient(180.68deg, rgba(0, 0, 0, 0) -9.3%, rgba(0, 0, 0, 0.59) 48.1%, #000000 99.41%);
+    width: 100%;
+    height: 145px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.content h1{
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30.8px;
+    letter-spacing: -0.03em;
+}
+.content h1 span{
+    color: #FFC758;
+}
+.layer{
+    width: 0;
+    height: 0;
+    background: rgba(17, 74, 141, 0.8);
+    color: #fff;
+    position: absolute;
+    left: 0px;
+    bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s;
+}
+.layer span{
+    color: #FFC758;
+}
+
+/* CSS for hover effect */
+.card-1:hover .layer, .card-2:hover .layer, .card-3:hover .layer, .card-4:hover .layer{
+    height: 90%;
+    width: 100%;
+}
+.card-1:hover .content h1, .card-2:hover .content h1, .card-3:hover .content h1, .card-4:hover .content h1{
+    display: none;
+}
+
+/* CSS for device responsiveness */
+@media screen and (max-width:700px){
+    .content h1, .content h1 span, .layer h1, .layer h1 span{
+        font-size: 20px;
+    }
+    .layer p{
+        font-size: 12px;
+    }
+    .box-content > h1, .box-content > h1 span{
+        font-size: 38px;
+    }
+}
+@media screen and (max-width:550px) {
+    .card-1, .card-2 , .card-3 , .card-4{
+        width: 311px;
+        height: 330px;
+    }
+}
+
