@@ -1,13 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: gothamLight;
+    src: url(./assets/fonts/GothamLight.ttf);
+}
+
+@font-face {
+    font-family: gothamMedium;
+    src: url(./assets/fonts/GothamMedium.ttf);
+}
+
+@font-face {
+    font-family: gothamBold;
+    src: url(./assets/fonts/GothamBold.ttf);
+}
+
 
 body{
-    margin: 0px;
-    padding: 0px;
-    font-weight: 400;
-    font-style: normal;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'gothamMedium', sans-serif;
 }
+
 .main-container{
     display: flex;
     align-items: center;
@@ -20,14 +36,19 @@ body{
     width: 100%;
     margin: 30px 50px;
 }
-.box-content > h1 span{
+.title{
+    width: 100%;
+    padding: 30px 0px;
+    text-align: center;
+}
+.title > h1 span{
     color: #114A8D;
     font-size: 48px;
     font-weight: 600;
     line-height: 57.6px;
     letter-spacing: -0.03em;
 }
-.box-content > h1{
+.title > h1{
     font-size: 48px;
     font-weight: 600;
     line-height: 57.6px;
@@ -50,13 +71,15 @@ body{
     overflow: hidden;
     cursor: pointer;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .card-1 img, .card-2 img , .card-3 img , .card-4 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s;
 }
 .content{
     position: absolute;
@@ -65,8 +88,9 @@ body{
     width: 100%;
     height: 145px;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
+    padding-bottom: 25px;
 }
 .content h1{
     color: #fff;
@@ -74,6 +98,7 @@ body{
     font-weight: 600;
     line-height: 30.8px;
     letter-spacing: -0.03em;
+
 }
 .content h1 span{
     color: #FFC758;
@@ -81,30 +106,26 @@ body{
 .layer{
     width: 0;
     height: 0;
+    opacity: 0;
     background: rgba(17, 74, 141, 0.8);
     color: #fff;
     position: absolute;
-    left: 0px;
-    bottom: 20px;
+    bottom: 10%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: all 0.5s;
+    z-index: 7;
+}
+
+.layer p{
+    padding-top: 10px;
+    font-family: 'gothamLight', sans-serif;
 }
 .layer span{
     color: #FFC758;
-}
-
-/* CSS for hover effect */
-.card-1:hover .layer, .card-2:hover .layer, .card-3:hover .layer, .card-4:hover .layer{
-    height: 90%;
-    width: 100%;
-}
-.card-1:hover .content h1, .card-2:hover .content h1, .card-3:hover .content h1, .card-4:hover .content h1{
-    display: none;
 }
 
 /* CSS for device responsiveness */
@@ -115,7 +136,7 @@ body{
     .layer p{
         font-size: 12px;
     }
-    .box-content > h1, .box-content > h1 span{
+    .title > h1, .title > h1 span{
         font-size: 38px;
     }
 }
